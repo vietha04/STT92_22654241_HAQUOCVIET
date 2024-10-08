@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <body>
+        <!-- Header Section -->
+        <header class="py-3" style="background-color: pink;">
+            <div class="container">
+                <h1 class="text-center">Example Cafe Menu</h1>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"><img src="../img/icons8-home-50.png" alt="home" width="30"> </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../html/bai02-tuan02.html" target="_blank">Starter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#main-courses">Main Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#desserts">Desserts</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Go</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    
+        <!-- Main Content -->
+        <div class="container my-5">
+            <div class="row">
+                <!-- Left Sidebar -->
+                <aside class="col-lg-3 mb-4">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Cafe Latte</a>
+                        <a href="#" class="list-group-item list-group-item-action">Cappuchino</a>
+                        <a href="#" class="list-group-item list-group-item-action">Ocean Blue</a>
+                        <a href="#" class="list-group-item list-group-item-action">Ice-cream Cafe</a>
+                        <a href="#" class="list-group-item list-group-item-action">Order Online</a>
+                    </div>
+                    <img src="../img/meeting.png" class="img-fluid mt-3" alt="Group of people">
+                </aside>
+    
+                <!-- Center Content -->
+                <div class="col-lg-6">
+                    <div id="starter" class="mb-4">
+                        <h2>Starter</h2>
+                        <ul class="list-unstyled">
+                            <li>Chestnut and Mushroom Goujons (v)</li>
+                            <li>Goat Cheese (v)</li>
+                            <li>Honey Soy Chicken Kebabs (v)</li>
+                            <li>Seafood Salad (v)</li>
+                        </ul>
+                        <p><a href="#" class="btn btn-primary">Back to Top</a></p>
+                    </div>
+    
+                    <div id="desserts" class="mb-4">
+                        <h2>Desserts</h2>
+                        <ul class="list-unstyled">
+                            <li>Lemon Sorbet (v)</li>
+                            <li>Chocolate Mud Pie (v)</li>
+                            <li>Pecan Pie (v)</li>
+                            <li>Selection of fine Cheeses from Around the World (v)</li>
+                        </ul>
+                        <p><a href="#" class="btn btn-primary">Back to Top</a></p>
+                    </div>
+    
+                    <!-- Information Form -->
+                    <div class="mb-4">
+                        <h2>Information</h2>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" name="telephone" placeholder="Telephone">
+                            </div>
+                            <div class="mb-3">
+                                <select name="country" class="form-select">
+                                    <option value="USA">USA</option>
+                                    <option value="Vietnam">Vietnam</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nationality:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="nationality" value="vietnamese">
+                                    <label class="form-check-label">Vietnamese</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="nationality" value="foreigner">
+                                    <label class="form-check-label">Foreigner</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="comments" class="form-control" rows="3" placeholder="Comment"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- Right Sidebar -->
+                <aside class="col-lg-3">
+                    <div class="bg-light p-3 mb-4">
+                        <h2>Events</h2>
+                        <h3>Regular Meetings</h3>
+                        <img src="../img/meeting.png" class="img-fluid" alt="Event">
+                        <p>Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a></p>
+    
+                        <h3>Product Launches</h3>
+                        <img src="../img/hinh-02.png" class="img-fluid" alt="Product Launch">
+                        <p>Launch your product with ease in a space that truly fits its image. <a href="#">Read more...</a></p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    
+        <!-- Footer Section -->
+        <footer class="bg-dark text-white py-3">
+            <div class="container text-center">
+                <p>ABC Company © - 12345678 - abccoffee@gmail.com</p>
+            </div>
+        </footer>
+    </body>
+
+</body>
+</html>
