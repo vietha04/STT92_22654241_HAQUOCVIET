@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border: 1px solid black
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+        }
+        h2 {
+            text-align: center;
+            color: pink;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><h2>Danh sách sinh viên</h2></th>
+                </tr>
+                <tr>
+                    <th>MSSV</th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="mssv"></td>
+                    <td id="ten"></td>
+                    <td id="lop"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let mssv = prompt("Mời bạn nhập MSSV:");
+        let ten = prompt("Mời bạn nhập tên:");
+        let lop = prompt("Mời bạn nhập lớp:");
+
+        document.getElementById('mssv').textContent = mssv || 'N/A';
+        document.getElementById('ten').textContent = ten || 'N/A';
+        document.getElementById('lop').textContent = lop || 'N/A';
+    </script>
+</body>
+</html>

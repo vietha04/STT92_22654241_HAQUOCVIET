@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phép tính</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Phép tính cơ bản</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nhập số thứ 1</td>
+                    <td> <input type="text" id="s1"></td>
+                    <td><label for="" style="color: red;" id="error1" >*</label></td>
+                </tr>
+                <tr>
+                    <td>Nhập số thứ 2</td>
+                    <td><input type="text" id="s2"></td>
+                    <td><label for="" style="color: red;" id="error2">*</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" onclick="cong()">Cộng</button>
+                        <button type="button" onclick="tru()">Trừ</button>
+                        <button type="button" onclick="nhan()">Nhân</button>
+                        <button type="button" onclick="chia()">Chia</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kết quả</td>
+                    <td><input type="text" id="kq"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+    <script>
+        function cong(){
+            var so1=document.getElementById('s1').value;
+            var so2=document.getElementById('s2').value;
+            var ketqua=document.getElementById('kq');
+            var loi1=document.getElementById('error1');
+            var loi2=document.getElementById('error2');
+            if(isNaN(so1)){
+                loi1.innerHTML='Yêu cầu nhập số';
+            }else if( isNaN(so2))
+                loi2.innerHTML='Yêu cầu nhập số';
+            {
+                ketqua.value=''+(Number(so1)+Number(so2));
+            }
+            
+
+            
+        }
+        function tru(){
+            var so1=document.getElementById('s1').value;
+            var so2=document.getElementById('s2').value;
+            var ketqua=document.getElementById('kq');
+            var loi1=document.getElementById('error1');
+            var loi2=document.getElementById('error2');
+            if(isNaN(so1)){
+                loi1.innerHTML='Yêu cầu nhập số';
+            }else if( isNaN(so2))
+                loi2.innerHTML='Yêu cầu nhập số';
+            {
+                ketqua.value=''+(Number(so1)-Number(so2));
+            }
+        }
+        function nhan(){
+            var so1=document.getElementById('s1').value;
+            var so2=document.getElementById('s2').value;
+            var ketqua=document.getElementById('kq');
+            var loi1=document.getElementById('error1');
+            var loi2=document.getElementById('error2');
+            if(isNaN(so1)){
+                loi1.innerHTML='Yêu cầu nhập số';
+            }else if( isNaN(so2))
+                loi2.innerHTML='Yêu cầu nhập số';
+            {
+                ketqua.value=''+(Number(so1)*Number(so2));
+            }
+        }
+        function chia(){
+            var so1=document.getElementById('s1').value;
+            var so2=document.getElementById('s2').value;
+            var ketqua=document.getElementById('kq');
+            var loi1=document.getElementById('error1');
+            var loi2=document.getElementById('error2');
+            if(isNaN(so1)){
+                loi1.innerHTML='Yêu cầu nhập số';
+            }else if( isNaN(so2))
+                loi2.innerHTML='Yêu cầu nhập số';
+            {
+                ketqua.value=''+(Number(so1)/Number(so2));
+            }
+        }
+    </script>
+</body>
+</html>

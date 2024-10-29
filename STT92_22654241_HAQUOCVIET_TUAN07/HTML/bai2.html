@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+        <script src="../JS/jquery-3.7.1.min.js"></script>
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+        <title>Document</title>
+        <script>
+            $(document).ready(function () {
+                $("#muaVao").focus();
+            });
+            function update() {
+                var checkVang = document.getElementById("checkVang");
+                var checkUSD = document.getElementById("checkUSD");
+                var t1 = document.getElementById("muaVao").value;
+                var t2 = document.getElementById("banRa").value;
+                var muaVang = document.getElementById("muaVang");
+                var banVang = document.getElementById("banVang");
+                var muaUSD = document.getElementById("muaUSD");
+                var banUSD = document.getElementById("banUSD");
+
+                if (checkVang.checked) {
+                    muaVang.innerHTML = t1;
+                    banVang.innerHTML = t2;
+                    muaUSD.innerHTML = "";
+                    banUSD.innerHTML = "";
+                } else if (checkUSD.checked) {
+                    muaUSD.innerHTML = t1;
+                    banUSD.innerHTML = t2;
+                    muaVang.innerHTML = "";
+                    banVang.innerHTML = "";
+                }
+
+                var loaixe = document.getElementsByTagName("option");
+                var mota = document.getElementById("mota");
+                var image = document.getElementById("image");
+                var gia = document.getElementById("price");
+
+                var giaArray = [35000, 15000, 40000, 32000, 50000, 45000];
+                var anhArray = [
+                    "../IMG/car1.jpg",
+                    "../IMG/car2.jpg",
+                    "../IMG/car3.jpg",
+                    "../IMG/car4.jpg",
+                    "../IMG/car5.jpg",
+                    "../IMG/car6.jpg",
+                ];
+
+                for (var i = 0; i < loaixe.length; i++) {
+                    if (loaixe[i].selected) {
+                        image.src = anhArray[i];
+                        gia.innerHTML = "Giá:" + giaArray[i];
+                    }
+                }
+            }
+            function check() {
+                var t1 = document.getElementById("muaVao").value;
+                var t2 = document.getElementById("banRa").value;
+                var trangthai = document.getElementById("trangThai");
+                var checkVang = document.getElementById("checkVang");
+                var checkUSD = document.getElementById("checkUSD");
+                if (t1 === "" || t1 === null || t2 === "" || t2 === null) {
+                    if (checkVang.checked || checkUSD.checked) {
+                        trangthai.disabled = true;
+                    }
+                } else {
+                    trangthai.disabled = false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <img class="w-100" src="../IMG/banner_car.jpg" alt="" />
+            <div class="row">
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    Bảng tin thị trường
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td colspan="2">Vàng</td>
+                            </tr>
+                            <tr>
+                                <td>Mua vào</td>
+                                <td>Bán ra</td>
+                            </tr>
+                            <tr>
+                                <td id="muaVang"></td>
+                                <td id="banVang"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">USD</td>
+                            </tr>
+                            <tr>
+                                <td>Mua vào</td>
+                                <td>Bán ra</td>
+                            </tr>
+                            <tr>
+                                <td id="muaUSD"></td>
+                                <td id="banUSD"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    Cập nhật thị trường
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mua vào</td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        id="muaVao"
+                                        onblur="check()"
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bán ra</td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        id="banRa"
+                                        onblur="check()"
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Loại xe</td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">Toyota</option>
+                                        <option value="">KIA</option>
+                                        <option value="">FORD</option>
+                                        <option value="">Civic</option>
+                                        <option value="">Ferrari</option>
+                                        <option value="">Mercedes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input
+                                        type="radio"
+                                        id="checkVang"
+                                        value="vàng"
+                                        name="ck"
+                                        onclick="check()"
+                                    />Vàng
+                                    <input
+                                        type="radio"
+                                        id="checkUSD"
+                                        value="USD"
+                                        name="ck"
+                                        onclick="check()"
+                                    />USD
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input
+                                        type="button"
+                                        onclick="update()"
+                                        value="Update"
+                                        id="trangThai"
+                                        disabled
+                                    />
+                                    <button>State</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Bảng báo giá</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="mota" class="text-start text-primary">
+                                    -Với kiểu dáng thể thao, sang trọng
+                                    <br />
+                                    - Nổi bật, ít tốn nhiên liệ
+                                    <br />
+                                    -Kiểu dáng thể thao
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="" alt="" id="image" /></td>
+                            </tr>
+                            <tr>
+                                <td
+                                    id="price"
+                                    class="text-start text-success"
+                                ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

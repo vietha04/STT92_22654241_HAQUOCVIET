@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Giỏ hàng lưu trữ
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Lặp qua tất cả các nút 'Thêm vào giỏ hàng'
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const productElement = button.parentElement;
+        const product = {
+            id: productElement.getAttribute('data-id'),
+            name: productElement.querySelector('.product-name').innerText,
+            price: productElement.querySelector('.product-price').innerText,
+            image: productElement.querySelector('.product-img').src,
+            quantity: productElement.querySelector('.product-quantity').value
+        };
+
+        // Kiểm tra nếu sản phẩm đã có trong giỏ hàng
+        const existingProduct = cart.find(item => item.id === product.id);
+        if (existingProduct) {
+            existingProduct.quantity = parseInt(existingProduct.quantity) + parseInt(product.quantity);
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Sản phẩm đã được thêm vào giỏ hàng!");
+    });
+});
+
+    </script>
+</head>
+<body>
+    <div class="product-list">
+        <!-- Sản phẩm 1 -->
+        <div class="product" data-id="1">
+            <img src="path/to/image1.jpg" alt="Sản phẩm 1" class="product-img">
+            <h3 class="product-name">Sản phẩm 1</h3>
+            <p class="product-price">300,000 VND</p>
+            <input type="number" class="product-quantity" value="1" min="1">
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+        </div>
+    
+        <!-- Sản phẩm 2 -->
+        <div class="product" data-id="2">
+            <img src="path/to/image2.jpg" alt="Sản phẩm 2" class="product-img">
+            <h3 class="product-name">Sản phẩm 2</h3>
+            <p class="product-price">450,000 VND</p>
+            <input type="number" class="product-quantity" value="1" min="1">
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+        </div>
+    
+        <!-- Sản phẩm 3 -->
+        <div class="product" data-id="3">
+            <img src="path/to/image3.jpg" alt="Sản phẩm 3" class="product-img">
+            <h3 class="product-name">Sản phẩm 3</h3>
+            <p class="product-price">600,000 VND</p>
+            <input type="number" class="product-quantity" value="1" min="1">
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+        </div>
+    
+        <!-- Và các sản phẩm khác... -->
+    </div>
+    
+</body>
+</html>

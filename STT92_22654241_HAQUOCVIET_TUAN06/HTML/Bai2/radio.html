@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 960px;
+            height: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th></th>
+                <th>FORM ĐỊNH DẠNG</th>
+            </tr>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Chọn</td>
+                <td>
+                    <input type="radio" name="c">Background
+                    <input type="radio" name="c">Font
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn màu</td>
+                <td><input type="color" placeholder="Chọn màu" id="mau"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" onclick="doimau()">Đổi màu</button>
+                    <button type="reset">Cancel</button>
+                </td>
+            </tr>
+        </table>
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aut ab dicta consequatur doloremque eveniet minima assumenda. Maiores facilis sint, possimus praesentium doloribus sequi non vitae in cum pariatur nisi.</p>
+    </div>
+
+    <script>
+        function doimau(){
+            var mau=document.getElementById('mau').value;
+            var ck=document.getElementsByName('c');
+            var text=document.getElementById('text');
+            if(ck[0].checked){
+                text.style.background=mau;
+            }else if(ck[1].checked){
+                text.style.color=mau;
+            }
+        }
+    </script>
+</body>
+</html>

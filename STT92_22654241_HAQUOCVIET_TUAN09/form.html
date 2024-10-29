@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử Lý Form</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0px;
+        }
+        .wrapper{
+            width: 789px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        function Nhap(){
+            var tendn, mk;
+            tendn = document.getElementById("txtus").value;
+            mk = document.getElementById("txtmk").value;
+            // Lưu giá trị vào mảng array
+            var cafe = new Array();
+
+            var taphop = document.querySelectorAll("input[type='checkbox']");
+            taphop.forEach(function(chk){
+                if(chk.checked)
+                    cafe.push(chk.value);
+            });
+            // radio lưu giá trị
+            var gtinh;
+            var taphopgt = document.querySelectorAll("input[type='radio']");
+            taphopgt.forEach(function(ra){
+                if(ra.checked)
+                gtinh = ra.value;
+            });
+            // thong bao tendn
+            var w = window.open("info.html")
+            // lưu dữ liệu set:
+            localStorage.setItem("us", tendn);
+            localStorage.setItem("pd", mk);
+            localStorage.setItem("cf", cafe);
+            localStorage.setItem("gt", gtinh);
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <input type="text" name="" id="txtus" placeholder=" User name">
+            <br>
+            <input type="password" name="" id="txtmk" placeholder="Password">
+            <br>
+            <input type="radio" name="gt" value="Nam">Nam
+            <input type="radio" name="gt" value="Nữ">Nữ
+            <br>
+            <input type="checkbox" value="Trung Nguyen">Trung Nguyen
+            <br>
+            <input type="checkbox" value="MeKong">MeKong
+            <br>
+            <input type="checkbox" value="New Blue">New Blue
+            <br>
+            <input type="checkbox" value="Trà sữa">Trà sữa
+            <br>
+            <input type="button" value="Nhập" onclick="Nhap()">
+            <br>
+        </form>
+    </div>
+</body>
+</html>

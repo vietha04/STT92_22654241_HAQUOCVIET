@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    Chọn loại cafe:
+               </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Trung Nguyên" name="cf">Trung Nguyên</td>
+                
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Me Khong" name="cf">Me Khong</td>
+                
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="New life" name="cf">New life</td>
+                
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Ocean Blue" name="cf">Ocean Blue</td>
+                
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Blue Space" name="cf">Blue Space</td>
+                
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Windows" name="cf">Windows</td>
+                
+            </tr>
+            <tr>
+                <td><button type="submit" onclick="checkbox()">Chọn</button></td>
+            </tr>
+            <tr>
+                <td>Bạn chọn cafe:</td>
+                <td id="text" style="color: red;"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function checkbox(){
+            var check= document.getElementsByName('cf');
+            var text=document.getElementById('text');
+            for(var i=0;i<check.length;i++){
+                if(check[i].checked){
+                    text.innerHTML+=''+check[i].value +','
+                   
+                }
+            }
+        }
+    </script>
+</body>
+</html>

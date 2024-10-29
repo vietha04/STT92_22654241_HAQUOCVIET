@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" id="formdn">
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <th colspan="6">Thông tin đăng nhập</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td id="getht"></td>
+                    </tr>
+                    <tr>
+                        <td>Mật khẩu</td>
+                        <td id="getmk"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+    <script>    
+        window.onload = function() {
+            var hoten = localStorage.getItem('hoten');
+            var matkhau = localStorage.getItem('matkhau');
+            document.getElementById('getht').innerText = hoten;
+            document.getElementById('getmk').innerText = matkhau;
+        };
+    </script>
+    
+</body>
+</html>

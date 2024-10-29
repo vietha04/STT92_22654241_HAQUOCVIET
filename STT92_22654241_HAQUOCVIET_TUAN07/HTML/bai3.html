@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+        <script src="../JS/jquery-3.7.1.min.js"></script>
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+        <title>Bai 3</title>
+        <script>
+            function nhap() {
+                var hoTen = document.getElementById("hoTen");
+                var tenDangNhap = document.getElementById("tenDangNhap");
+                var matKhau = document.getElementById("matKhau");
+                var xacNhanMK = document.getElementById("xacNhanMatKhau");
+                var sdt = document.getElementById("dt");
+                var email = document.getElementById("email");
+
+                var loiHoTen = document.getElementById("errTen");
+                var loiTenDangNhap = document.getElementById("errTenDangNhap");
+                var loiMatKhau = document.getElementById("errMatKhau");
+                var loiXacNhanMatKhau = document.getElementById("errXacNhanMK");
+                var loiDienThoai = document.getElementById("errDienThoai");
+                var loiEmail = document.getElementById("errEmail");
+
+                if (hoTen.value == null || hoTen.value.trim().length == 0) {
+                    loiHoTen.innerHTML = "Không được rỗng";
+                    hoTen.focus();
+                    return false;
+                } 
+
+                if (
+                    tenDangNhap.value == null ||
+                    tenDangNhap.value.trim().length == 0
+                ) {
+                    loiTenDangNhap.innerHTML = "Không được rỗng";
+                    tenDangNhap.focus();
+                    return false;
+                } else if (tenDangNhap.value.length < 6) {
+                    loiTenDangNhap.innerHTML =
+                        "Tên đăng nhập từ 6 ký tự trở lên";
+                    tenDangNhap.focus();
+                    return false;
+                } 
+
+                if (matKhau.value == null || matKhau.value.trim().length == 0) {
+                    loiMatKhau.innerHTML = "Không được rỗng";
+                    matKhau.focus();
+                    return false;
+                } 
+
+                if (
+                    xacNhanMK.value == null ||
+                    xacNhanMK.value.trim().length == 0
+                ) {
+                    loiXacNhanMatKhau.innerHTML = "Không được rỗng";
+                    xacNhanMK.focus();
+                    return false;
+                } else if (matKhau.value != xacNhanMK.value) {
+                    loiXacNhanMatKhau.innerHTML =
+                        "Xác nhận mật khẩu không đúng";
+                    xacNhanMK.focus();
+                    return false;
+                } 
+
+                if (sdt.value == null || sdt.value.trim().length == 0) {
+                    loiDienThoai.innerHTML = "Điện thoại không được rỗng";
+                    sdt.focus();
+                    return false;
+                } else if (isNaN(sdt.value)) {
+                    loiDienThoai.innerHTML = "Điện thoại Phải là số";
+                    sdt.focus();
+                    return false;
+                }
+
+                if (email.value == null || email.value.trim().length == 0) {
+                    loiEmail.innerHTML = "Không được rỗng";
+                    email.focus();
+                    return false;
+                } else {
+                    localStorage.setItem("hoTen", hoTen.value);
+                    localStorage.setItem("tenDangNhap", tenDangNhap.value);
+                    localStorage.setItem("matKhau", matKhau.value);
+                    localStorage.setItem("xacNhanMK", xacNhanMK.value);
+                    localStorage.setItem("dienThoai", sdt.value);
+                    localStorage.setItem("email", email.value);
+                    window.location.href = "thongtin.html";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container bg-success-subtle mt-3">
+            <div class="d-flex justify-content-center align-items-center">
+                <form action="" onsubmit="return nhap()">
+                    <table class="table">
+                        <thead class="border border-bottom border-1">
+                            <tr>
+                                <th
+                                    class="text text-center bg-success-subtle text-primary"
+                                    colspan="2"
+                                >
+                                    Register Form
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Họ và tên(*):
+                                </td>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5"
+                                >
+                                    <input type="text" id="hoTen" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errTen"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Tên đăng nhập(*):
+                                </td>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5"
+                                >
+                                    <input type="text" id="tenDangNhap" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errTenDangNhap"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Mật khẩu(*):
+                                </td>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5"
+                                >
+                                    <input type="text" id="matKhau" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errMatKhau"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Xác nhận mật khẩu(*):
+                                </td>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5"
+                                >
+                                    <input type="text" id="xacNhanMatKhau" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errXacNhanMK"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-success-subtle border border-1 border-black px-5 text-primary">
+                                    Ngày sinh
+                                </td>
+                                <td class="bg-success-subtle border border-1 border-black px-5">
+                                    <input type="date" name="" id="ns" class="rounded-1"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Điện thoại
+                                </td>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5"
+                                >
+                                    <input type="text" name="" id="dt" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errDienThoai"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-success-subtle border border-1 border-black px-5 text-primary">
+                                    Địa chỉ:
+                                </td>
+                                <td class="bg-success-subtle border border-1 border-black px-5">
+                                    <input type="text" id="dc" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-success-subtle border border-1 border-black px-5 text-primary">
+                                    Email khác:
+                                </td>
+                                <td class="bg-success-subtle border border-1 border-black px-5">
+                                    <input type="text" id="email" />
+                                </td>
+                                <td class="bg-success-subtle">
+                                    <label
+                                        class="text-danger"
+                                        id="errEmail"
+                                    ></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="bg-success-subtle border border-1 border-black px-5 text-primary"
+                                >
+                                    Sở thích:
+                                </td>
+                                <td class="bg-success-subtle border border-1 border-black px-5">
+                                    <select name="" id="" class="rounded-1">
+                                        <option value="">Ca nhạc</option>
+                                        <option value="">Chơi game</option>
+                                        <option value="">Du lịch</option>
+                                        <option value="">Ngủ</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-success-subtle border border-1 border-black px-5"></td>
+                                <td class="bg-success-subtle border border-1 border-black px-5 ">
+                                    <button type="submit" class="rounded-1">Đăng ký</button>
+                                    <button type="reset" class="rounded-1">Hủy</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    
+    </body>
+</html>

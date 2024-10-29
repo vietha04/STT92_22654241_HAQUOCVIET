@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+        <link rel="stylesheet" href="../CSS/style.css" />
+        <script src="../JS/main.js"></script>
+        <script src="../JS/jquery-3.7.1.min.js"></script>
+        <title>Bai1</title>
+    </head>
+    <body>
+        <div class="container w-75 mt-5 border-5 border-secondary-subtle border pt-3 pb-5 px-3">
+            <h1>Animal Gallery</h1>
+            <div class="thumbnails">
+                <div class="row p-1">
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/1.jpg"
+                            style=" width: 400px; height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Lion</figcaption>
+                    </div>
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/cat.jpg"
+                            style="width: 419px; height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Cat</figcaption>
+                    </div>
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/bird.jpg"
+                            style="width: 360px; height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Bird</figcaption>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/rhino.jpg"
+                            style="height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Rhino</figcaption>
+                    </div>
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/panda.webp"
+                            style="height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Panda</figcaption>
+                    </div>
+                    <div class="col-4 img-thumbnail">
+                        <img
+                            onclick="show(this)"
+                            src="../IMG/goat.webp"
+                            style="height: 300px"
+                        />
+                        <figcaption class="text-center fw-bold">Goat</figcaption>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="showBoard">
+            <div id="maskContainer" onclick="hide()"></div>
+            <div id="showContainer">
+                <img src="../IMG/1.jpg" class="imageShow" style="width: 500px;" />
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+        <script src="../JS/jquery-3.7.1.min.js"></script>
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+        <title>Thông Tin Đăng Ký</title>
+        <script>
+            window.onload = function () {
+                var hoTen = localStorage.getItem("hoTen");
+                var tenDangNhap = localStorage.getItem("tenDangNhap");
+                var matKhau = localStorage.getItem("matKhau");
+                var xacNhanMK = localStorage.getItem("xacNhanMK");
+                var email = localStorage.getItem("email");
+                var sdt = localStorage.getItem("dienThoai");
+                document.getElementById("hoTen").innerText = "Họ tên: " + hoTen;
+                document.getElementById("tenDangNhap").innerText =
+                    "Tên đăng nhập: " + tenDangNhap;
+                document.getElementById("matKhau").innerText =
+                    "Mật khẩu: " + matKhau;
+                document.getElementById("xacNhanMK").innerText =
+                    "Xác nhận mật khẩu: " + xacNhanMK;
+                document.getElementById("dienThoai").innerText =
+                    "Email: " + email;
+                document.getElementById("email").innerText =
+                    "Số điện thoại: " + sdt;
+            };
+        </script>
+    </head>
+    <body>
+        <div class="container text-center bg-success-subtle p-5 mt-5">
+            <h1>Thông Tin Đăng Ký</h1>
+            <div id="info">
+                <p id="hoTen"></p>
+                <p id="tenDangNhap"></p>
+                <p id="matKhau"></p>
+                <p id="xacNhanMK"></p>
+                <p id="dienThoai"></p>
+                <p id="email"></p>
+            </div>
+        </div>
+    </body>
+</html>
